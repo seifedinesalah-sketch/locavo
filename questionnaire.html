@@ -1,0 +1,194 @@
+<!--
+   Projet Locavo – Technologies Web – ENSI 2025/2026
+   Membres : Yosri Nawach – Houcine Tajouri – Seif Eddine Salah
+   Fichier : about.html
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavo - À Propos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <script src="../js/banner.js" defer></script>
+    <script src="../js/about.js" defer></script>
+</head>
+
+<body>
+    <div class="banniere-container">
+        <div class="banniere-texte" id="banniere-texte"><img src="../images/logo.png" alt="Locavo" class="banniere-logo"><span
+                id="banniere-msg"></span></div>
+    </div>
+    <nav class="navbar">
+        <div class="logo-container"><img src="../images/logo.png" alt="Locavo Logo" class="logo-img"><span class="logo-text">Locavo</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../php/flotte.php">Nos Voitures</a></li>
+            <li><a href="../php/recherche.php">Recherche</a></li>
+            <li><a href="../php/reservation.php">Réservation</a></li>
+            <li><a href="../php/sport.php">Sport / Coupés</a></li>
+            <li><a href="../php/suv.php">SUV &amp; Crossovers</a></li>
+            <li><a href="../php/economiques.php">Économiques</a></li>
+            <li><a href="../php/modeles.php">Cabriolets</a></li>
+            <li><a href="../php/luxe.php">Luxe</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+            <li><a href="../php/about.php" class="active">À propos</a></li>
+            <li><a href="../html/funpage.html">Fun Page</a></li>
+        </ul>
+    </nav>
+    <header class="about-hero"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-home.jpg'); background-size: cover; background-position: center;">
+        <h1>À Propos</h1>
+        <p>Votre liberté, notre moteur</p>
+    </header>
+
+    <section class="text-block">
+        <h2>Qui sommes-nous ?</h2>
+        <p>Bienvenue chez Locavo, votre partenaire de confiance pour tous vos déplacements en Tunisie. Plus qu'une
+            simple agence de location, Locavo est née d'une ambition claire : simplifier la mobilité pour tous. Que vous
+            soyez un particulier en quête d'évasion ou un professionnel aux impératifs précis, nous mettons la route à
+            votre portée en quelques clics.</p>
+    </section>
+
+    <section class="text-block alt-bg">
+        <div class="text-inner">
+            <h2>Pourquoi choisir Locavo ?</h2>
+            <p>Nous savons que la location de voiture peut parfois sembler complexe. C'est pourquoi nous avons bâti
+                notre service sur trois piliers fondamentaux :</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="icon">🤝</div>
+                <h3>La Proximité</h3>
+                <p>Fidèles à notre nom, nous restons proches de nos clients avec un service personnalisé et une écoute
+                    attentive.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">💎</div>
+                <h3>La Transparence</h3>
+                <p>Chez Locavo, pas de mauvaises surprises. Nos tarifs sont clairs, honnêtes et sans frais cachés.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🛡️</div>
+                <h3>La Qualité</h3>
+                <p>Notre flotte est rigoureusement entretenue et renouvelée régulièrement pour vous garantir confort et
+                    sécurité optimale.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-block">
+        <h2>Notre Engagement</h2>
+        <p>Votre satisfaction est notre seule boussole.</p>
+        <h3 style="color: #0e6fa5; margin-top: 30px;">Nos garanties :</h3>
+        <ol>
+            <li>Véhicules contrôlés avant chaque location</li>
+            <li>Assistance dépannage 24h/24 et 7j/7</li>
+            <li>Kilométrage illimité sur certaines offres</li>
+            <li>Annulation gratuite jusqu'à 48h avant</li>
+            <li>Programme de fidélité avantageux</li>
+        </ol>
+        <h3 style="color: #0e6fa5; margin-top: 30px;">Services inclus :</h3>
+        <ul>
+            <li>Nettoyage complet du véhicule</li>
+            <li>Plein de carburant à la prise en charge</li>
+            <li>Assurance de base incluse</li>
+            <li>Support client multilingue</li>
+        </ul>
+        <div class="quote-box">« Locavo, c'est l'assurance d'un voyage serein, où que vous alliez. »</div>
+    </section>
+
+    <div class="table-container">
+        <h2>Grille Tarifaire</h2>
+        <table class="pricing-table" id="table-tarifs">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>1 Jour</th>
+                    <th>3 Jours</th>
+                    <th>1 Semaine</th>
+                    <th>1 Mois</th>
+                    <th>Modèles</th>
+                </tr>
+            </thead>
+            <tbody id="tarif-body"></tbody>
+        </table>
+    </div>
+
+    <div class="form-container" style="margin-top: 40px;">
+        <h2>Ajouter une catégorie tarifaire</h2>
+        <form id="form-ajout">
+            <fieldset>
+                <legend>Nouvelle catégorie</legend>
+                <div class="form-grid">
+                    <div class="form-group"><label for="add-categorie">Catégorie *</label><input type="text"
+                            id="add-categorie" placeholder="Ex : Berline" required></div>
+                    <div class="form-group"><label for="add-jour1">Prix 1 jour (DT) *</label><input type="number"
+                            id="add-jour1" min="1" placeholder="Ex : 120" required></div>
+                    <div class="form-group"><label for="add-jour3">Prix 3 jours (DT) *</label><input type="number"
+                            id="add-jour3" min="1" placeholder="Ex : 330" required></div>
+                    <div class="form-group"><label for="add-semaine">Prix 1 semaine (DT) *</label><input type="number"
+                            id="add-semaine" min="1" placeholder="Ex : 700" required></div>
+                    <div class="form-group"><label for="add-mois">Prix 1 mois (DT) *</label><input type="number"
+                            id="add-mois" min="1" placeholder="Ex : 2200" required></div>
+                    <div class="form-group"><label for="add-modeles">Modèles *</label><input type="text"
+                            id="add-modeles" placeholder="Ex : Golf, Passat" required></div>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn-orange">Ajouter au tableau</button>
+        </form>
+        <p id="msg-ajout" style="text-align:center;margin-top:10px;font-weight:bold;"></p>
+    </div>
+
+    <div class="form-container" style="margin-top: 20px;">
+        <h2>Rechercher</h2>
+        <form id="form-recherche">
+            <fieldset>
+                <legend>Recherche par mot-clé</legend>
+                <div class="form-group"><label for="search-mot">Mot-clé (catégorie ou modèle)</label><input type="text"
+                        id="search-mot" placeholder="Ex : SUV ou Ferrari"></div>
+            </fieldset>
+            <button type="submit" class="btn-orange">Rechercher</button>
+            <button type="button" id="btn-tout" class="btn-reset">Afficher tout</button>
+        </form>
+        <p id="msg-recherche" style="text-align:center;margin-top:10px;font-weight:bold;"></p>
+    </div>
+
+    <section class="text-block alt-bg">
+        <h2>Contactez-nous</h2>
+        <p>Une question ? Notre équipe est à votre disposition.</p>
+        <div
+            style="margin-top: 30px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin-left: auto; margin-right: auto;">
+            <p style="margin-bottom: 15px;"><strong>📍</strong> ENSI - Manouba, Tunisie</p>
+            <p style="margin-bottom: 15px;"><strong>📞</strong> <a href="tel:+21612345678"
+                    style="color:#0e6fa5;font-weight:bold;">+216 12 345 678</a></p>
+            <p style="margin-bottom: 0;"><strong>✉️</strong> <a href="mailto:contact@locavo.tn"
+                    style="color:#0e6fa5;font-weight:bold;">contact@locavo.tn</a></p>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <h2>Restez informé</h2>
+        <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives.</p>
+        <form action="https://httpbin.org/get" method="GET" class="newsletter-form" id="newsletter-form"><input
+                type="email" name="newsletter_email" placeholder="Votre adresse email" required><button
+                type="submit">S'inscrire</button></form>
+    </section>
+    <section class="cta-section">
+        <h2>Prêt à prendre la route ?</h2>
+        <p>Réservez votre véhicule en quelques clics et partez l'esprit tranquille.</p><a href="../php/reservation.php"
+            class="btn-white pulse-animation">Réserver maintenant</a>
+    </section>
+    <footer>
+        <p>© 2026 Locavo - Tous droits réservés</p>
+        <p>Contact : <a href="tel:+21612345678">+216 12 345 678</a> | <a
+                href="mailto:contact@locavo.tn">contact@locavo.tn</a></p>
+        <div class="footer-links"><a href="../index.html">Accueil</a><a href="../php/about.php">À propos</a><a
+                href="../html/contact.html">Contact</a><a href="../php/reservation.php">Réservation</a><a
+                href="../html/questionnaire.html">Questionnaire</a><a href="../html/funpage.html">Fun Page</a></div>
+    </footer>
+</body>
+
+</html>

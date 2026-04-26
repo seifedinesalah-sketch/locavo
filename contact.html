@@ -1,0 +1,10 @@
+<?php
+try {
+    $pdo = new PDO("mysql:host=sql301.infinityfree.com;dbname=if0_41761706_locavo_db;charset=utf8", "if0_41761706", "GnyDaloJq5ko9");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec("SET NAMES 'utf8'");
+} catch (PDOException $e) {
+    http_response_code(500);
+    die("<h2 style='color:red;font-family:sans-serif;text-align:center;margin-top:80px;'>Erreur de connexion a la base de donnees.<br><small>" . htmlspecialchars($e->getMessage()) . "</small></h2>");
+}
+?>

@@ -1,0 +1,144 @@
+<!--
+   Projet Locavo – Technologies Web – ENSI 2025/2026
+   Membres : Yosri Nawach – Houcine Tajouri – Seif Eddine Salah
+   Fichier : index.html
+-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavo - Accueil</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/banner.js" defer></script>
+    <style>
+        .welcome-section {
+            background: linear-gradient(135deg, #0e6fa5 0%, #0a5a8a 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .welcome-section h2 {
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .why-us-section {
+            padding: 60px 20px;
+            background: #f9f9f9;
+        }
+
+        .why-us-section h2 {
+            text-align: center;
+            color: #0e6fa5;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banniere-container">
+        <div class="banniere-texte" id="banniere-texte"><img src="images/logo.png" alt="Locavo" class="banniere-logo"><span
+                id="banniere-msg"></span></div>
+    </div>
+    <nav class="navbar">
+        <div class="logo-container"><img src="images/logo.png" alt="Locavo Logo" class="logo-img"><span class="logo-text">Locavo</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="php/flotte.php">Nos Voitures</a></li>
+            <li><a href="php/recherche.php">Recherche</a></li>
+            <li><a href="php/reservation.php">Réservation</a></li>
+            <li><a href="php/sport.php">Sport / Coupés</a></li>
+            <li><a href="php/suv.php">SUV &amp; Crossovers</a></li>
+            <li><a href="php/economiques.php">Économiques</a></li>
+            <li><a href="php/modeles.php">Cabriolets</a></li>
+            <li><a href="php/luxe.php">Luxe</a></li>
+            <li><a href="html/contact.html">Contact</a></li>
+            <li><a href="php/about.php">À propos</a></li>
+            <li><a href="html/funpage.html">Fun Page</a></li>
+        </ul>
+    </nav>
+    <header class="hero"
+        style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-home.jpg'); background-size: cover; background-position: center;">
+        <h1>Locavo</h1>
+        <p>Plateforme de location de voitures en ligne</p>
+        <div class="slogan">BEST DEALS • GREAT CARS • SAFE JOURNEY</div>
+    </header>
+    <section class="welcome-section">
+        <h2>Bienvenue chez Locavo</h2>
+        <p>Découvrez notre flotte de véhicules premium pour tous vos besoins en Tunisie.</p>
+    </section>
+    <main class="container">
+        <h2 style="text-align: center; color: #0e6fa5; margin-bottom: 30px;">Nos Catégories de Véhicules</h2>
+        <div class="grid-3">
+            <div class="card"><img src="images/category-sport.jpg" class="card-img" alt="Sport">
+                <div class="card-overlay"><a href="php/sport.php">Découvrir</a></div>
+                <div class="card-content"><span class="badge-info">Sportif</span>
+                    <h3>Voitures de Sport / Coupés</h3>
+                </div>
+            </div>
+            <div class="card"><img src="images/category-economique.jpg" class="card-img" alt="Économique">
+                <div class="card-overlay"><a href="php/economiques.php">Découvrir</a></div>
+                <div class="card-content"><span class="badge-info">Économique</span>
+                    <h3>Voitures Économiques / Citadines</h3>
+                </div>
+            </div>
+            <div class="card"><img src="images/category-suv.jpg" class="card-img" alt="SUV">
+                <div class="card-overlay"><a href="php/suv.php">Découvrir</a></div>
+                <div class="card-content"><span class="badge-info">SUV</span>
+                    <h3>SUV & Crossovers</h3>
+                </div>
+            </div>
+            <div class="card"><img src="images/category-cabriolet.jpg" class="card-img" alt="Cabriolets">
+                <div class="card-overlay"><a href="php/modeles.php">Découvrir</a></div>
+                <div class="card-content"><span class="badge-info">Cabriolet</span>
+                    <h3>Cabriolets</h3>
+                </div>
+            </div>
+            <div class="card"><img src="images/luxe1.jpg" class="card-img" alt="Luxe">
+                <div class="card-overlay"><a href="php/luxe.php">Découvrir</a></div>
+                <div class="card-content"><span class="badge-info">Luxe</span>
+                    <h3>Véhicules de Luxe</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="why-us-section">
+        <h2>Pourquoi Choisir Locavo ?</h2>
+        <div class="container">
+            <ul class="styled-list" style="max-width: 600px; margin: 0 auto;">
+                <li>Large choix de véhicules pour tous les budgets</li>
+                <li>Réservation simple et rapide en ligne</li>
+                <li>Tarifs transparents sans frais cachés</li>
+                <li>Assistance 24h/24 et 7j/7</li>
+                <li>Véhicules récents et bien entretenus</li>
+                <li>Annulation gratuite jusqu'à 48h avant</li>
+            </ul>
+        </div>
+    </section>
+    <section class="newsletter-section">
+        <h2>Restez informé</h2>
+        <p>Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives.</p>
+        <form action="https://httpbin.org/get" method="GET" class="newsletter-form"><input type="email"
+                name="newsletter_email" placeholder="Votre adresse email" required><button
+                type="submit">S'inscrire</button></form>
+    </section>
+    <section class="cta-section">
+        <h2>Prêt à partir ?</h2>
+        <p>Réservez dès maintenant et profitez de nos offres exclusives.</p><a href="php/reservation.php"
+            class="btn-white pulse-animation">Réserver maintenant</a>
+    </section>
+    <footer>
+        <p>© 2026 Locavo - Tous droits réservés</p>
+        <p>Contact : <a href="tel:+21612345678">+216 12 345 678</a> | <a
+                href="mailto:contact@locavo.tn">contact@locavo.tn</a></p>
+        <div class="footer-links"><a href="index.html">Accueil</a><a href="php/about.php">À propos</a><a
+                href="html/contact.html">Contact</a><a href="php/reservation.php">Réservation</a><a
+                href="html/questionnaire.html">Questionnaire</a><a href="html/funpage.html">Fun Page</a></div>
+    </footer>
+</body>
+
+</html>

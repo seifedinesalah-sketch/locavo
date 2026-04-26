@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locavo - Contact</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <script src="../js/banner.js" defer></script>
+    <script src="../js/contact.js" defer></script>
+</head>
+
+<body>
+    <div class="banniere-container">
+        <div class="banniere-texte" id="banniere-texte">
+            <img src="../images/logo.png" alt="Locavo" class="banniere-logo">
+            <span id="banniere-msg"></span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="logo-container"><img src="../images/logo.png" alt="Locavo Logo" class="logo-img"><span class="logo-text">Locavo</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../php/flotte.php">Nos Voitures</a></li>
+            <li><a href="../php/recherche.php">Recherche</a></li>
+            <li><a href="../php/reservation.php">Réservation</a></li>
+            <li><a href="../php/sport.php">Sport / Coupés</a></li>
+            <li><a href="../php/suv.php">SUV &amp; Crossovers</a></li>
+            <li><a href="../php/economiques.php">Économiques</a></li>
+            <li><a href="../php/modeles.php">Cabriolets</a></li>
+            <li><a href="../php/luxe.php">Luxe</a></li>
+            <li><a href="../html/contact.html" class="active">Contact</a></li>
+            <li><a href="../php/about.php">À propos</a></li>
+            <li><a href="../html/funpage.html">Fun Page</a></li>
+        </ul>
+    </nav>
+
+    <header class="contact-hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-home.jpg'); background-size: cover; background-position: center;">
+        <h1>Contactez-nous</h1>
+        <p>Nous sommes à votre écoute 7j/7</p>
+    </header>
+
+    <section class="galerie-section">
+        <h2>Notre flotte en images</h2>
+        <div class="galerie-cadre">
+            <img id="galerie-img" src="../images/cabrio1.jpg" alt="Galerie Locavo">
+            <p id="galerie-legende" style="text-align:center;margin-top:10px;color:#555;font-style:italic;">Image 1 / 5</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="contact-card">
+            <div class="icon">📍</div>
+            <h3>Adresse</h3>
+            <p>ENSI - Manouba<br>Tunisie</p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Téléphone</h3>
+            <p><a href="tel:+21612345678">+216 12 345 678</a><br>Disponible 7j/7</p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">✉️</div>
+            <h3>Email</h3>
+            <p><a href="mailto:contact@locavo.tn">contact@locavo.tn</a><br>Réponse sous 1h</p>
+        </div>
+    </section>
+
+    <div class="form-container" id="contact-form" style="margin-top: 40px;">
+        <h2>Envoyez-nous un message</h2>
+        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+        
+        <form id="formContact" action="../php/contact.php" method="POST" onsubmit="return validerContact()">
+            <fieldset>
+                <legend>Vos Informations</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="contact_nom">Nom complet *</label>
+                        <input type="text" id="contact_nom" name="nom" placeholder="Ex: Foulen Ben Foulen"
+                               required minlength="2">
+                        <span id="err_nom" class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_email">Email *</label>
+                        <input type="email" id="contact_email" name="email" placeholder="Ex: mail@email.com"
+                               required>
+                        <span id="err_email" class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_telephone">Téléphone</label>
+                        <input type="tel" id="contact_telephone" name="telephone" placeholder="Ex: 12 345 678">
+                        <span id="err_telephone" class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_societe">Société (optionnel)</label>
+                        <input type="text" id="contact_societe" name="societe" placeholder="Nom de votre entreprise">
+                        <span id="err_societe" class="error-msg"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Votre Demande</legend>
+                <div class="form-group">
+                    <label for="contact_sujet">Sujet *</label>
+                    <select id="contact_sujet" name="sujet" required>
+                        <option value="">-- Choisir un sujet --</option>
+                        <option value="reservation">Question sur une réservation</option>
+                        <option value="tarifs">Demande de tarifs</option>
+                        <option value="disponibilite">Disponibilité d'un véhicule</option>
+                        <option value="reclamation">Réclamation</option>
+                        <option value="partenariat">Partenariat professionnel</option>
+                        <option value="autre">Autre demande</option>
+                    </select>
+                    <span id="err_sujet" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contact_urgence">Niveau d'urgence</label>
+                    <input type="range" id="contact_urgence" name="urgence" min="1" max="5" value="3">
+                    <small style="color: #666;">1 = Pas urgent | 5 = Très urgent</small>
+                    <span id="err_urgence" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contact_message">Votre message *</label>
+                    <textarea id="contact_message" name="message" placeholder="Décrivez votre demande en détail..."
+                              required minlength="10"></textarea>
+                    <span id="err_message" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contact_fichier">Joindre un fichier (optionnel)</label>
+                    <input type="file" id="contact_fichier" name="fichier" accept=".pdf,.jpg,.png,.doc,.docx">
+                    <span id="err_fichier" class="error-msg"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Préférences</legend>
+                <div class="form-group">
+                    <label>Comment préférez-vous être contacté ?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="contact_pref" value="email" checked> Par email</label>
+                        <label><input type="radio" name="contact_pref" value="telephone"> Par téléphone</label>
+                        <label><input type="radio" name="contact_pref" value="sms"> Par SMS</label>
+                    </div>
+                    <span id="err_pref" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label>Comment nous avez-vous connu ?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="source" value="internet"> Recherche Internet</label>
+                        <label><input type="checkbox" name="source" value="reseaux"> Réseaux sociaux</label>
+                        <label><input type="checkbox" name="source" value="ami"> Recommandation</label>
+                        <label><input type="checkbox" name="source" value="pub"> Publicité</label>
+                    </div>
+                    <span id="err_source" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label for="contact_couleur">Couleur préférée de véhicule</label>
+                    <input type="color" id="contact_couleur" name="couleur" value="#0e6fa5">
+                    <span id="err_couleur" class="error-msg"></span>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox" name="newsletter" value="oui"> Je souhaite recevoir la newsletter Locavo</label>
+                </div>
+                <div class="form-group">
+                    <label><input type="checkbox" name="copie" value="oui"> Recevoir une copie de ce message</label>
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="btn-orange">Envoyer le message</button>
+            <button type="reset" class="btn-reset">Réinitialiser</button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <h2>Nos Horaires d'Ouverture</h2>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Jour</th>
+                    <th>Matin</th>
+                    <th>Après-midi</th>
+                    <th>Service Téléphonique</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lundi</strong></td>
+                    <td>8h00 - 12h00</td>
+                    <td>14h00 - 18h00</td>
+                    <td>8h00 - 20h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Mardi</strong></td>
+                    <td>8h00 - 12h00</td>
+                    <td>14h00 - 18h00</td>
+                    <td>8h00 - 20h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Mercredi</strong></td>
+                    <td>8h00 - 12h00</td>
+                    <td>14h00 - 18h00</td>
+                    <td>8h00 - 20h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Jeudi</strong></td>
+                    <td>8h00 - 12h00</td>
+                    <td>14h00 - 18h00</td>
+                    <td>8h00 - 20h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Vendredi</strong></td>
+                    <td>8h00 - 12h00</td>
+                    <td>14h00 - 18h00</td>
+                    <td>8h00 - 20h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Samedi</strong></td>
+                    <td colspan="2" class="highlight">9h00 - 16h00 (continu)</td>
+                    <td>9h00 - 18h00</td>
+                </tr>
+                <tr>
+                    <td><strong>Dimanche</strong></td>
+                    <td colspan="2">Fermé</td>
+                    <td class="highlight">10h00 - 14h00 (urgences)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Locavo - Tous droits réservés</p>
+        <p>Contact : <a href="tel:+21612345678">+216 12 345 678</a> | <a href="mailto:contact@locavo.tn">contact@locavo.tn</a></p>
+        <div class="footer-links">
+            <a href="../index.html">Accueil</a>
+            <a href="../php/about.php">À propos</a>
+            <a href="../html/contact.html">Contact</a>
+            <a href="../php/reservation.php">Réservation</a>
+            <a href="../html/questionnaire.html">Questionnaire</a>
+            <a href="../html/funpage.html">Fun Page</a>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
